@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { CartContext } from "@/provider/CartProvider";
 
 const DataCard = ({ item }) => {
   const { id, title, foodImg, price, category } = item;
+    const { cart, setCart } = useContext(CartContext);
+
+     const handleAddToCart = () => {
+     setCart(prev => [...prev, item]); // add item to cart
+  };
 
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
@@ -39,7 +45,7 @@ const DataCard = ({ item }) => {
             </Link>
 
             {/* Add to Cart */}
-            <button className="px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            <button onClick={handleAddToCart} className="px-3 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
               Add to Cart
             </button>
           </div>

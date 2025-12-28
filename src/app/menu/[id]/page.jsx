@@ -1,18 +1,25 @@
 'use client';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import ProductDetailsCard from '@/components/ProductDetailsCard';
 
-import React from 'react';
+const MenuDetails = () => {
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-const MenuDetails = ({params}) => {
-    const {id} = useParams();
+  useEffect(() => {
+    if (!id) return;
+    fetch(`https://taxi-kitchen-api.vercel.app/api/v1/foods/${id}`)
+      .then(res => res.json())
+      .then(data => setItem(data.details))
+      .finally(() => setLoading(false));
+  }, [id]);
 
-    console.log(id);
-    
-    return (
-        <div>
-            <h2>Menu Item Details {id}</h2>
-        </div>
-    );
+  if (loading) return <p>Loading...</p>;
+  if (!item) return <p>Item not found.</p>;
+
+  return <ProductDetailsCard item={item} />;
 };
 
 export default MenuDetails;

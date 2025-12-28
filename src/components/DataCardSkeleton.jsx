@@ -1,10 +1,10 @@
 const DataCardSkeleton = () => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden animate-pulse">
-      {/* Image skeleton */}
+      
       <div className="w-full h-48 bg-gray-200" />
 
-      {/* Content */}
+     
       <div className="p-4 space-y-3">
         <div className="h-4 w-24 bg-gray-200 rounded" />
 
