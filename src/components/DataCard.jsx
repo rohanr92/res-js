@@ -32,7 +32,7 @@ const DataCard = ({ item }) => {
 
           <div className="flex gap-2">
             {/* View Details */}
-            <Link href={`/food/${id}`}>
+            <Link href={`/menu/${id}`}>
               <button className="px-3 py-2 text-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition">
                 View Details
               </button>
