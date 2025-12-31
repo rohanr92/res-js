@@ -60,6 +60,24 @@ const Header = () => {
                                 <Link href="/blog" className={linkClass("/blog")}>Blog</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
+
+
+                           <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link href="/reviews" className={linkClass("/reviews")}>Reviews</Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+
+                          <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link href="/post" className={linkClass("/post")}>Post</Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+                          <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link href="/post-view" className={linkClass("/post-view")}>Post View</Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>

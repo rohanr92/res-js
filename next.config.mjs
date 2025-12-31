@@ -8,7 +8,21 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.themealdb.com",
       },
+         {
+        protocol: "https",
+        hostname: "randomuser.me",
+      },
     ],
+  },
+
+  redirects() {
+    return [
+      {
+        source: '/food-detail/:path*', // old URL pattern
+        destination: '/menu/:path*',   // new URL pattern
+        permanent: true,               // 301 redirect
+      },
+    ];
   },
 };
 

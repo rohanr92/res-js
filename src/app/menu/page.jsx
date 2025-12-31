@@ -26,7 +26,7 @@ const Menu = () => {
     fetchData();
   }, []);
 
-  // Handle search submit
+  
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchTerm.trim()) {
@@ -50,12 +50,11 @@ const Menu = () => {
     }
   };
 
-  // Handle input change
+  
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
 
-    // Restore original data immediately when input is empty
     if (value.trim() === '') {
       setData(originalData);
     }
