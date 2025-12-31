@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import CartProvider from "@/provider/CartProvider";
+import LogProvider from "@/components/Provider/LogProvider";
 
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <LogProvider>
     <html lang="en" className={poppinsFonts.className}>
       <body
         className={`${poppinsFonts.variable} ${poppinsFonts.variable} antialiased`}
@@ -37,5 +39,6 @@ export default function RootLayout({ children }) {
         
       </body>
     </html>
+    </LogProvider>
   );
 }

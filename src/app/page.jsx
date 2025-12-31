@@ -1,3 +1,6 @@
+import LoggedData from "@/components/LoggedData";
+import LoginBtn from "@/components/LoginBtn";
+import { Link } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,15 +11,9 @@ export default function Home() {
         <div className="h-full place-content-center text-center"> 
           <h1 className="text-5xl font-bold mb-4">Welcome to Our Restaurant</h1>
           <p className="text-xl mb-8">Experience the best dining with us.</p>
-          <a
-            href="/menu"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition"
-          >
-            View Our Menu
-          </a></div>
-         
-
+         <LoginBtn></LoginBtn></div>
         </div>
+        <LoggedData></LoggedData>
       </main>
     </div>
   );
